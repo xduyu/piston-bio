@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let titleText = "Annecy Bio ";
+    let titleText = "Annecy Bio | piston";
     let index = 0;
 
     // Анимация смены заголовка
