@@ -1,0 +1,588 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0; /* Light gray text color */
+    background: url('./img/back4.mp4') no-repeat center center fixed;
+    background-color: black;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Video and Overlay */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    filter: brightness(50%); /* Dim the video */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    z-index: -1;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 50px auto 0;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.1); /* Darker background for container */
+    border-radius: 12px;
+    backdrop-filter: blur(2px); /* Slightly less blur */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+    border: 1px solid rgba(0, 0, 0, 0.4); /* Darker border */
+    position: relative;
+    z-index: 1;
+    animation: slideUp 0.5s ease-out;
+}
+
+
+
+/* 
+.container::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4); /* More subtle background 
+    z-index: -1;
+} */
+
+/* Keyframe Animations */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+    /* header img.banner-img {
+        width: 100%;
+        height: 210px;
+        border-radius: 12px;
+        max-height: 400px;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    } */
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;    
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#discord-avatar {
+    border-radius: 25px;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(#a88163, 0.4); /* Subtle border */
+    margin-right: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Softer shadow */
+}
+
+#discord-avatar:hover {
+    transform: scale(1.02); /* Less scaling */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Softer shadow */
+}
+
+/* Profile Information */
+.profile-info {
+    max-width: 550px;
+    position: relative;
+}
+
+.profile-info h2 {
+    font-size: 2.5em;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    position: relative;
+    padding-right: 50px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Softer shadow */
+}
+
+.profile-info .emoji {
+    position: relative;
+    right: -5px;
+    top: 5px;
+    font-size: 1em;
+    transition: transform 0.3s ease;
+    animation: textGlowOrange;
+}
+
+.profile-info .emoji:hover {
+    transform: scale(1.1);
+}
+
+/* Status */
+#discord-status {
+    font-size: 1.3em;
+    color: #ccc;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Bio Description */
+.bio-description {
+    font-size: 1.3em;
+    color: #ccc;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Contacts Section */
+#contacts {
+    margin-top: 30px;
+}
+
+#contacts h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+#contacts ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contacts li {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    animation: fadeIn 2s ease-out;
+}
+
+#contacts a {
+    color: #a4c0d1; /* Lighter blue */
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#contacts a:hover {
+    text-decoration: underline;
+    color: #8aafc6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1em;
+    color: #aaa; /* Lighter gray */
+    animation: fadeIn 3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .profile-info h2 {
+        font-size: 2em;
+    }
+
+    #discord-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bio-description {
+        font-size: 1em;
+    }
+
+    #contacts li {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin-top: 100px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .profile-info h2 {
+        font-size: 1.8em;
+    }
+
+    #discord-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .bio-description {
+        font-size: 0.9em;
+    }
+
+    #contacts li {
+        font-size: 0.9em;
+    }
+
+    .emoji2{
+        display: none;
+    }
+}
+
+/* Dark Purple Theme for Categories and Elements */
+.categories {
+    background-color: #3d0066; /* More muted dark purple */
+    color: #ddd; /* Lighter text color */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.categories h2 {
+    color: #ddd;
+}
+
+.categories a {
+    color: #e0b3ff; /* Softer light purple */
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.categories a:hover {
+    color: #d0aaff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+.profile-info h2 {
+    animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    }
+    50% {
+        text-shadow: 0 0 16px rgba(255, 255, 255, 0.4); /* Slightly stronger glow */
+    }
+    100% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    }
+}
+
+@keyframes textGlowOrange {
+    0% {
+        text-shadow: 0 0 8px rgba(100, 79, 16, 0.2); /* Subtle glow */
+    }
+    50% {
+        text-shadow: 0 0 16px rgba(233, 201, 40, 0.4); /* Slightly stronger glow */
+    }
+    100% {
+        text-shadow: 0 0 8px rgba(102, 58, 5, 0.2); /* Subtle glow */
+    }
+}
+
+
+#contacts{
+    max-width: 900px;
+    margin: 50px auto 0;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.1); /* Darker background for container */
+    border-radius: 12px;
+    backdrop-filter: blur(2px); /* Slightly less blur */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); */
+    border: 1px solid rgba(0, 0, 0, 0.4); /* Darker border */
+    position: relative;
+    z-index: 2;
+    animation: slideUp 0.5s ease-out;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0; /* Light gray text color */
+    background-color: black;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Video and Overlay */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    filter: brightness(50%); /* Dim the video */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    z-index: -1;
+    animation: fadeIn 1s ease-in;
+}
+
+
+/* Rain CSS */
+#rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Above the video and below the main content */
+    pointer-events: none; /* Rain should not block user interactions */
+    overflow: hidden;
+}
+
+.raindrop {
+    rotate: 33deg;
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: fall linear infinite;
+    z-index: 2;
+    filter: blur(0.5px);
+}
+
+/* Keyframe for Rainfall */
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* Для плавного эффекта параллакса */
+.parallax {
+    transition: transform 0.1s ease-out;
+    will-change: transform; /* Оптимизация производительности */
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    background-color: black;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Video and Overlay */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    filter: brightness(50%);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    animation: fadeIn 1s ease-in;
+}
+
+
+/* Keyframe Animations */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#discord-avatar {
+    border-radius: 25px;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#discord-avatar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.profile-info {
+    max-width: 550px;
+}
+
+.profile-info h2 {
+    font-size: 2.5em;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    position: relative;
+    padding-right: 50px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.emoji {
+    position: relative;
+    right: -5px;
+    top: 5px;
+    transition: transform 0.3s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.1);
+}
+
+/* Rain CSS */
+#rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.raindrop {
+    rotate: 33deg;
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: fall linear infinite;
+    z-index: 2;
+    filter: blur(0.5px);
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* Parallax Effect */
+.parallax {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
